@@ -1,5 +1,10 @@
 window.onload=()=>{
-const parrafo= document.getElementById('text')//consigue los elementos de html segun su id
-parrafo.innerText = 'Texto actualizado'//podemos cambiar contenido de etiquetas
-parrafo.innerHTML = '<li>elemento 1</li><li>elemento 2</li>'//podemos agregar elementos html a otro elemento html
+    const form= document.getElementById('todo-form');
+    form.onsubmit = (e) => {
+        e.preventDefault();//previene el refresco de ventana que ocasiona submit
+        const todo = document.getElementById('todo');
+        const todoText = todo.value;
+        todo.value='';
+        console.log(todoText);
+    }
 }
