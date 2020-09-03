@@ -9,10 +9,8 @@ window.onload=()=>{
         todo.value='';
         todos.push(todoText);
         const todolist = document.getElementById('todo-list');
-        todolist.innerHTML='';
-        for(let t=0; t<todos.length; t++){
-            todolist.innerHTML += '<li>' + todos[t] + '</li>';
-        }
-        console.log(todoText);
+        const todosTemplate = todos.map(t => '<li>'+t+'</li>');
+        todolist.innerHTML = todosTemplate.join('');
+        
     }
 }
