@@ -9,19 +9,15 @@ window.onload=()=>{
         todo.value='';
         todos.push(todoText);
         const todolist = document.getElementById('todo-list');
-        const todosTemplate = todos.map(t => '<li>'+t+'</li>');
+        const todosTemplate = todos.map(t=>'<li>'+t+'</li>');
         todolist.innerHTML = todosTemplate.join('');
-        //INSPECCIONANDO ELEMENTOS DE LA TO DO LIST PRIMERA FORMA
-        //document.querySelectorAll('#todo-list')
-        //const todolist = document.querySelectorAll('#todo-list')
-        //Array.from(todolist)
-        //const elementos = document.querySelectorAll('#todolist li')
-        //Array.from(elementos)
-        //elementos.forEach(x => console.log(x))
         const elementos = document.querySelectorAll('#todo-list li')
+        //ELIMINANDO ELEMENTOS 
         elementos.forEach((elemento, i)=>{
-            elemento.addEventListener('click',() => {
-                console.log(elemento,i)
+            elemento.addEventListener('click',() => {//al registrar el evento de click, addEventListener imprimira el elemento en la consola
+                elemento.parentNode.removeChild(elemento);//elimina elementos de la lista
+                todos.splice(i, 1)
+                console.log(todos,i)
             })
         })
 
