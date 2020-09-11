@@ -33,3 +33,10 @@ window.onload=()=>{
         render();
     }
 }
+
+const a={b=2}
+const a,c = 4
+const d ={...a}//spread operator crea copias independientes de los valores de un objeto
+
+Promise.resolve(2)//promesa que al resolver le da el valor de 2 a 'valor'
+    .then(valor => console.log(valor))
